@@ -78,7 +78,7 @@ The robot uses a 9V adapter that has an output of 2.5A or more.
 The bot uses deep learning models alongside computer vision, Kalman filtering and concepts of Advanced Driver Assistance Systems(ADAS) all made with C++ and python.
 Using Computer vision and Kalman filtering to make itself aware of itself and  environment and how to react to changes in the environment.
 Sketching
-This is where the AutoCAD(Fusion360) squad come in.
+This is where the AutoCAD(Fusion360).
 Building a Prototype
 
 

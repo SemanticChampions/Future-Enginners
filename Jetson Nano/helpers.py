@@ -1,4 +1,4 @@
-# Importing all modules
+# Importing all module
 import cv2
 import numpy as np
 
@@ -6,8 +6,8 @@ import numpy as np
 def detect_blue_color():
 
 # Specifying upper and lower ranges of color to detect in hsv format
-    lower = np.array([95, 150, 20]) 
-    upper = np.array([135, 255, 255])  # (These ranges will detect Yellow)
+    blue_lower = np.array([95, 150, 20]) 
+    blue_upper = np.array([135, 255, 255])  # (These ranges will detect Yellow)
 
 # Capturing webcam footage
     webcam_video = cv2.VideoCapture(0)
@@ -19,7 +19,7 @@ def detect_blue_color():
         img = cv2.cvtColor(video, cv2.COLOR_BGR2HSV)
 
     # Masking the image to find our color
-        blue_mask = cv2.inRange(img, lower, upper)
+        blue_mask = cv2.inRange(img, blue_lower, blue_upper)
 
         mask_contours, hierarchy = cv2.findContours(
         blue_mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)  # Finding contours in mask image
