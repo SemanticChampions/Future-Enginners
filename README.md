@@ -16,7 +16,7 @@ Aim
 The aim of the robot is to swiftly maneuver its environment or parkour.
 This involves
 
-Objectives
+**Objectives**
 
 1. Detect obstacles in the environment.
 2. Avoid obstacles in the environment.

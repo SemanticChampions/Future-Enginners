@@ -3,11 +3,11 @@ import cv2
 import numpy as np
 
 
-def detect_color():
+def detect_blue_color():
 
 # Specifying upper and lower ranges of color to detect in hsv format
-    lower = np.array([15, 150, 20]) 
-    upper = np.array([35, 255, 255])  # (These ranges will detect Yellow)
+    lower = np.array([95, 150, 20]) 
+    upper = np.array([135, 255, 255])  # (These ranges will detect Yellow)
 
 # Capturing webcam footage
     webcam_video = cv2.VideoCapture(0)
@@ -19,10 +19,10 @@ def detect_color():
         img = cv2.cvtColor(video, cv2.COLOR_BGR2HSV)
 
     # Masking the image to find our color
-        mask = cv2.inRange(img, lower, upper)
+        blue_mask = cv2.inRange(img, lower, upper)
 
         mask_contours, hierarchy = cv2.findContours(
-        mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)  # Finding contours in mask image
+        blue_mask, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)  # Finding contours in mask image
 
     # Finding position of all contours
         if len(mask_contours) != 0:
@@ -32,8 +32,13 @@ def detect_color():
                     cv2.rectangle(video, (x, y), (x + w, y + h),
                               (0, 0, 255), 3)  # drawing rectangle
 
-        cv2.imshow("mask image", mask)  # Displaying mask image
+        
+
+        cv2.imshow("mask image", blue_mask)  # Displaying mask image
 
         cv2.imshow("window", video)  # Displaying webcam image
 
         cv2.waitKey(1)
+
+
+detect_blue_color()
